@@ -67,6 +67,10 @@ body {
     font-size: 40px;
 }
 
+.action-btn.small.active {
+    color: #4a00e0;
+}
+
 .progress-container {
     background: #ccc;
     height: 5px;
