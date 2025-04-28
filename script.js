@@ -15,6 +15,13 @@ const progress = document.getElementById('progress');
 const currentTimeEl = document.getElementById('current-time');
 const durationEl = document.getElementById('duration');
 
+const shuffleBtn = document.getElementById('shuffle');
+const repeatBtn = document.getElementById('repeat');
+
+let isShuffle = false;
+let isRepeat = false;
+
+
 // Song list
 const songs = [
     {
@@ -135,3 +142,29 @@ audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
 
 audio.addEventListener('ended', nextSong); // Move to next song automatically
+
+
+shuffleBtn.addEventListener('click', () => {
+    isShuffle = !isShuffle;
+    shuffleBtn.classList.toggle('active');
+});
+
+repeatBtn.addEventListener('click', () => {
+    isRepeat = !isRepeat;
+    repeatBtn.classList.toggle('active');
+});
+
+
+//
+
+audio.addEventListener('ended', () => {
+    if (isRepeat) {
+        playSong(); // Replay current song
+    } else if (isShuffle) {
+        songIndex = Math.floor(Math.random() * songs.length);
+        loadSong(songs[songIndex]);
+        playSong();
+    } else {
+        nextSong(); // Play next normally
+    }
+});
