@@ -21,6 +21,9 @@ const repeatBtn = document.getElementById('repeat');
 let isShuffle = false;
 let isRepeat = false;
 
+const volumeSlider = document.getElementById('volume-slider');
+
+
 
 // Song list
 const songs = [
@@ -167,4 +170,8 @@ audio.addEventListener('ended', () => {
     } else {
         nextSong(); // Play next normally
     }
+});
+
+volumeSlider.addEventListener('input', (e) => {
+    audio.volume = e.target.value;
 });
