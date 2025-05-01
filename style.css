@@ -18,7 +18,7 @@ body {
     padding: 2rem;
     border-radius: 20px;
     text-align: center;
-    width: 350px;
+    width: 400px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
@@ -98,7 +98,7 @@ body {
 }
 
 #volume-slider {
-    width: 100%;
+    width: 20%;
     appearance: none;
     height: 5px;
     background: #ccc;
@@ -114,4 +114,29 @@ body {
     border-radius: 50%;
     cursor: pointer;
     margin-top: -5px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    animation: spin 5s linear infinite;
+    animation-play-state: paused; /* Start paused */
+}
+
+/* Spin Animation Keyframes */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Class for playing state */
+.play img {
+    animation-play-state: running;
 }
