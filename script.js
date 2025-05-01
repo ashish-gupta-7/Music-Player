@@ -28,19 +28,33 @@ const volumeSlider = document.getElementById('volume-slider');
 // Song list
 const songs = [
     {
-        name: 'song1',
+        name: 'Hasi',
         title: 'First Song',
         artist: 'Artist 1'
     },
     {
-        name: 'song2',
+        name: 'Humnava',
         title: 'Second Song',
         artist: 'Artist 2'
     },
     {
-        name: 'song3',
+        name: 'Saaware',
         title: 'Third Song',
         artist: 'Artist 3'
+    },{
+        name: 'Millonare',
+        title: 'Fourth Song',
+        artist: 'Artist 4'
+    },
+    {
+        name: 'TereSangYaara',
+        title: 'Fifth Song',
+        artist: 'Artist 5'
+    },
+    {
+        name: 'AkhiyoSeGoliMaare',
+        title: 'Sixth Song',
+        artist: 'Artist 6'
     }
 ];
 
