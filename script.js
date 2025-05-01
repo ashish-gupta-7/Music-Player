@@ -68,7 +68,7 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
     title.innerText = song.title;
     artist.innerText = song.artist;
-    audio.src = `music/${song.name}.mp3`;
+    audio.src = `music/${song.name}.m4a`;
     cover.src = `images/${song.name}.jpg`;
 }
 
