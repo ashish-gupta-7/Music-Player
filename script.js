@@ -23,7 +23,8 @@ let isRepeat = false;
 
 const volumeSlider = document.getElementById('volume-slider');
 
-
+const toggleBtn = document.getElementById('toggleListBtn');
+const songList = document.getElementById('songList');
 
 // Song list
 const songs = [
@@ -188,4 +189,22 @@ audio.addEventListener('ended', () => {
 
 volumeSlider.addEventListener('input', (e) => {
     audio.volume = e.target.value;
+});
+
+// Toggle visibility of song list
+toggleBtn.addEventListener('click', () => {
+    songList.classList.toggle('show');
+    toggleBtn.textContent = songList.classList.contains('show') ? '🔽 Hide Songs' : '🎵 Show Songs';
+});
+
+// Load song list dynamically
+songs.forEach((song, index) => {
+    const li = document.createElement('li');
+    li.innerText = `${index + 1}. ${song.displayName} - ${song.artist}`;
+    li.addEventListener('click', () => {
+        songIndex = index;
+        loadSong(songs[songIndex]);
+        playSong();
+    });
+    songList.appendChild(li);
 });
