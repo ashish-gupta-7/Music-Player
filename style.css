@@ -22,6 +22,44 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+#toggleListBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background: #4a00e0;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#songList {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+#songList li {
+    background: #eee;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#songList li:hover {
+    background: #ccc;
+}
+
+#songList.show {
+    max-height: 500px; /* enough to show all songs */
+}
+
+
 .music-info h2 {
     font-size: 24px;
     margin-bottom: 5px;
